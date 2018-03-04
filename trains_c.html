@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/trains_c.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script>
+        var myApp=angular.module("myApp",[]);
+        myApp.controller('getData', function($scope,$http){
+            $http({
+                method:"GET",
+//                url:"http://192.168.43.60:8080/queryyh"
+				url:"json/data2.json"
+            }).then(function successCallback(response){
+                $scope.datasetTrain=response.data.train;
+                $scope.datasetTraint=response.data.traint;
+
+            },function errorCallback(response){});
+
+        });
+	</script>
+
+	<title>trains_c</title>
+</head>
+<body ng-app="myApp" ng-controller="getData">
+    <div id="zqq_basic1">
+		<div id="zqq_pic">
+			<img src="img/zqq_train_c.png" alt="">
+			<ul class="zqq_ul_list">
+				<li ng-repeat="train in datasetTrain">
+					<a href="{{'#zqq'+$index}}" >{{train.title}}</a>
+					<span>-</span>
+				</li>
+				<li ng-repeat="traint in datasetTraint">
+				<a href="{{'#zq'+$index}}">{{traint.title}}</a>
+				</li>
+			</ul>
+		</div>
+		<div class="zqq_basic2" ng-repeat="train in datasetTrain" id="{{'zqq'+$index}}">
+			<b class="zqq_circle"></b>
+			<div class="zqq_guide">
+				<h2 >{{train.title}}</h2>
+				<div class="zqq_btn">
+					<label >
+						<span>出发城市：</span>
+						<input type="text" class="zqq_input" placeholder="汉字/拼音/首字母">
+					</label>
+					<label >
+						<span>日期：</span>
+						<input type="text" class="zqq_input" placeholder="yyyy-mm-dd">
+					</label>
+					<input type="button" value="{{train.value}}" class="zqq_button">
+				</div>
+			</div>
+			<div class="zqq_basic3">
+				<div class="zqq_image"></div>
+				<div class="zqq_container">
+					<p>
+					{{train.content}}
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="zqq_basic4" ng-repeat="traint in datasetTraint" id="{{'zq'+$index}}">
+			<b class="zqq_circlet"></b>
+			<div class="zqq_guide">
+				<h2>{{traint.title}}</h2>
+				<div class="zqq_btn">
+					<label >
+						<span>出发城市：</span>
+						<input type="text" class="zqq_input" placeholder="汉字/拼音/首字母">
+					</label>
+					<label >
+						<span>日期：</span>
+						<input type="text" class="zqq_input" placeholder="yyyy-mm-dd">
+					</label>
+					<input type="button" value="{{traint.value}}" class="zqq_button">
+				</div>
+			</div>
+			<div class="zqq_basic3">
+				<div class="zqq_image"></div>
+				<div class="zqq_container">
+					<p>
+						{{traint.content}}
+					</p>
+				</div>
+			</div>
+		</div>
+		</div>
+</body>
+</html>

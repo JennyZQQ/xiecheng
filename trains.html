@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/trains.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script src="js/trains.js"></script>
+	<script>
+        var myApp=angular.module("myApp",[]);
+        myApp.controller('getData', function($scope,$http){
+            $http({
+                method:"GET",
+//                url:"http://192.168.43.167:8080/query"
+				url:"json/data.json"
+            }).then(function successCallback(response){
+                $scope.datasetSlide=response.data.slide;
+                $scope.datasetHothotel=response.data.shht;
+                $scope.datasetHothotel2=response.data.bjt;
+                $scope.datasetHothotel3=response.data.hzt;
+                $scope.datasetHothotel4=response.data.gzt;
+                $scope.datasetHothotel5=response.data.njt;
+                $scope.datasetHothotel6=response.data.tjt;
+                $scope.datasetHothotel7=response.data.wht;
+                $scope.datasetHothotel8=response.data.xat;
+                $scope.datasetHotline=response.data.shh;
+                $scope.datasetHotline2=response.data.bj;
+                $scope.datasetHotline3=response.data.hz;
+                $scope.datasetHotline4=response.data.gz;
+                $scope.datasetHotline5=response.data.nj;
+                $scope.datasetHotline6=response.data.tj;
+                $scope.datasetHotline7=response.data.wh;
+                $scope.datasetHotline8=response.data.xa;
+
+            },function errorCallback(response){});
+
+        });
+	</script>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<title>trains</title>
+</head>
+<body ng-app="myApp" ng-controller="getData">
+<div id="zqq_zong">
+	<div id="zqq_base1">
+		<div id="zqq_search">
+			<div id="zqq_search_title">
+				<a href="" class="zqq_search_title1">国内火车票</a>
+				<a href="" class="zqq_search_title2">国际台湾火车票</a>
+			</div>
+			<div id="zqq_search_box">
+				<ul class="zqq_search_type">
+					<li class="zqq_fontcolor">单程</li>
+					<li>返程</li>
+					<li>中转</li>
+				</ul>
+				<div id="zqq_search_form">
+					<div class="zqq_search_input">
+						<input type="text" name="" placeholder="出发城市">
+						<a href="" class="zqq_change"></a>
+					</div>
+					<div class="zqq_search_input">
+						<input type="text" name="" placeholder="到达城市">
+					</div>
+					<div class="zqq_search_input">
+						<input id="zqq_date" type="text" name="">
+					</div>
+					<div class="zqq_search_input">
+						<i class="zqq_checkbox"></i>
+						只搜高铁动车
+					</div>
+					<input type="button" value="开始搜索" id="zqq_search_button">
+				</div>
+			</div>
+		</div>
+		<div id="zqq_banner">
+			<div class="ck-slide">
+				<ul class="ck-slide-wrapper">
+					<li>
+						<a href="http://createthink.net"><img ng-src="{{datasetSlide[0].img}}"></a>
+					</li>
+					<li>
+						<a href="http://createthink.net"><img ng-src="{{datasetSlide[1].img}}"></a>
+					</li>
+					<li>
+						<a href="http://createthink.net"><img ng-src="{{datasetSlide[2].img}}"></a>
+					</li>
+				</ul>
+				<div class="ck-slidebox">
+					<div class="slideWrap">
+						<ul class="dot-wrap">
+							<li class="current"><em>1</em></li>
+							<li><em>2</em></li>
+							<li><em>3</em></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="zqq_friendlink"></div>
+	<div id="zqq_base2">
+		<table width=100%>
+			<tbody>
+			<tr>
+				<td width=16%>
+					<a href="">
+						<i class="zqq_table_img1"></i>
+						余票查询
+					</a>
+				</td>
+				<td width=5%>
+					<i class="zqq_table_line"></i>
+				</td>
+				<td width=16%>
+					<a href="">
+						<i class="zqq_table_img2"></i>
+						代售点查询
+					</a>
+				</td>
+				<td width=5%>
+					<i class="zqq_table_line"></i>
+				</td>
+				<td width=16%>
+					<a href="">
+						<i class="zqq_table_img3"></i>
+						时刻表查询
+					</a>
+				</td>
+				<td width=5%>
+					<i class="zqq_table_line"></i>
+				</td>
+				<td width=16%>
+					<a href="">
+						<i class="zqq_table_img4"></i>
+						预售期查询
+					</a>
+				</td>
+				<td width=5%>
+					<i class="zqq_table_line"></i>
+				</td>
+				<td width=16%>
+					<a href="">
+						<i class="zqq_table_img5"></i>
+						常见问题
+					</a>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="zqq_base3">
+		<div class="zqq_base4">
+			<div class="zqq_title">
+				<div class="zqq_subnav">
+					<a href="###" class="zqq_subnav_bg">上海</a>
+					<a href="###">北京</a>
+					<a href="###">杭州</a>
+					<a href="###">广州</a>
+					<a href="###">南京</a>
+					<a href="###">天津</a>
+					<a href="###">武汉</a>
+					<a href="###">西安</a>
+				</div>
+				<h2>
+					优惠酒店
+					<span>/热门酒店优惠</span>
+				</h2>
+			</div>
+		</div>
+		<div class="zqq_hidden">
+			<div class="zqq_base5" >
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel" ng-if="$index<4">
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==0">推荐</i>
+						<div>
+						<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+						<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+							<p class="zqq_txt_content1" >{{hotel.name}}</p>
+							<p class="zqq_txt_content2">
+								<i class="zqq_map"></i>
+								<span >{{hotel.location}}</span>
+							</p>
+							<span class="zqq_score" >{{hotel.score}}</span>
+						</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="zqq_base5" >
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel" ng-if="$index<8&&$index>=4">
+				<a href="">
+					<i class="zqq_tip" ng-if="$index==4">推荐</i>
+					<div>
+						<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+						<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+							<p class="zqq_txt_content1" >{{hotel.name}}</p>
+							<p class="zqq_txt_content2">
+								<i class="zqq_map"></i>
+								<span >{{hotel.location}}</span>
+							</p>
+							<span class="zqq_score" >{{hotel.score}}</span>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			</div>
+			<div class="zqq_base5">
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel" ng-if="$index<12&&$index>=8">
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==8">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="zqq_hidden_beijing">
+			<div class="zqq_base5_beijing" >
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel2" ng-if="$index<4" >
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==0">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="zqq_base5_beijing" >
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel2" ng-if="$index<8&&$index>=4" >
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==4">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+
+			</div>
+			<div class="zqq_base5_beijing">
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel2" ng-if="$index<12&&$index>=8" >
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==8">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="zqq_hidden_hangzhou">
+			<div class="zqq_base5_hangzhou" >
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel3" ng-if="$index<4">
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==0">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="zqq_base5_hangzhou" >
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel3" ng-if="$index<8&&$index>=4" >
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==4">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+
+			</div>
+			<div class="zqq_base5_hangzhou">
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel3" ng-if="$index<12&&$index>=8" >
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==8">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="zqq_hidden_guangzhou">
+			<div class="zqq_base5_guangzhou" >
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel4" ng-if="$index<4">
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==0">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="zqq_base5_guangzhou" >
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel4" ng-if="$index<8&&$index>=4" >
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==4">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+
+			</div>
+			<div class="zqq_base5_guangzhou">
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel4" ng-if="$index<12&&$index>=8" >
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==8">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="zqq_hidden_nanjing">
+			<div class="zqq_base5_nanjing" >
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel5" ng-if="$index<4" >
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==0">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="zqq_base5_nanjing" >
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel5" ng-if="$index<8&&$index>=4" >
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==4">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+
+			</div>
+			<div class="zqq_base5_nanjing">
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel2" ng-if="$index<12&&$index>=8" >
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==8">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="zqq_hidden_tianjin">
+			<div class="zqq_base5_tianjin" >
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel6" ng-if="$index<4">
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==0">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="zqq_base5_tianjin" >
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel6" ng-if="$index<8&&$index>=4" >
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==4">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+
+			</div>
+			<div class="zqq_base5_tianjin">
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel6" ng-if="$index<12&&$index>=8" >
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==8">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="zqq_hidden_wuhan">
+			<div class="zqq_base5_wuhan" >
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel7" ng-if="$index<4">
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==0">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="zqq_base5_wuhan" >
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel7" ng-if="$index<8&&$index>=4" >
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==4">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+
+			</div>
+			<div class="zqq_base5_wuhan">
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel7" ng-if="$index<12&&$index>=8" >
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==8">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+
+			</div>
+		</div>
+		<div class="zqq_hidden_xian">
+			<div class="zqq_base5_xian" >
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel8" ng-if="$index<4">
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==0">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="zqq_base5_xian" >
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel8" ng-if="$index<8&&$index>=4" >
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==4">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+
+			</div>
+			<div class="zqq_base5_xian">
+				<div class="zqq_content json_hotel1" ng-repeat="hotel in datasetHothotel8" ng-if="$index<12&&$index>=8" >
+					<a href="">
+						<i class="zqq_tip" ng-if="$index==8">推荐</i>
+						<div>
+							<div class="zqq_icon"><img ng-src={{hotel.picture}} alt=""></div>
+							<div class="zqq_txt" >
+						<span class="zqq_price">
+							<dfn>¥</dfn>
+							<strong >{{hotel.price}}</strong>起
+						</span>
+								<p class="zqq_txt_content1" >{{hotel.name}}</p>
+								<p class="zqq_txt_content2">
+									<i class="zqq_map"></i>
+									<span >{{hotel.location}}</span>
+								</p>
+								<span class="zqq_score" >{{hotel.score}}</span>
+							</div>
+						</div>
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+		<a href="###" class="zqq_hotel_left"></a>
+		<a  href="###" class="zqq_hotel_right"></a>
+	</div>
+
+	<div class="zqq_base3" id="zqq_bg">
+		<div class="zqq_base4">
+			<div class="zqq_title">
+				<h2>
+					坐火车去旅行
+					<span>/热门火车旅游路线</span>
+				</h2>
+			</div>
+		</div>
+		<div class="zqq_base5">
+			<div class="zqq_content">
+				<a href="">
+					<i class="zqq_tip">推荐</i>
+					<div class="zqq_icon"><img ng-src="img/zqq_train1.jpg" alt=""></div>
+					<div class="zqq_txt zqq_txt_border" >
+						<p class="zqq_txt_content1">京广高铁</p>
+
+						<p class="zqq_txt_content2">
+						<span class="zqq_right">
+							92% 
+							<i class="zqq_heart"></i>
+						</span>
+							天南地北任我游
+						</p>
+					</div>
+				</a>
+			</div>
+			<div class="zqq_content">
+				<a href="">
+					<div class="zqq_icon"><img ng-src="img/zqq_train2.jpg" alt=""></div>
+					<div class="zqq_txt zqq_txt_border" >
+						<p class="zqq_txt_content1">京沪高铁</p>
+
+						<p class="zqq_txt_content2">
+						<span class="zqq_right">
+							95% 
+							<i class="zqq_heart"></i>
+						</span>
+							千里京沪一日还
+						</p>
+					</div>
+				</a>
+			</div>
+			<div class="zqq_content">
+				<a href="">
+					<div class="zqq_icon"><img ng-src="img/zqq_train3.jpg" alt=""></div>
+					<div class="zqq_txt zqq_txt_border" >
+						<p class="zqq_txt_content1">宁杭甬</p>
+
+						<p class="zqq_txt_content2">
+						<span class="zqq_right">
+							89% 
+							<i class="zqq_heart"></i>
+						</span>
+							最养眼的高铁线路
+						</p>
+					</div>
+				</a>
+			</div>
+			<div class="zqq_content">
+				<a href="">
+					<div class="zqq_icon"><img ng-src="img/zqq_train4.jpg" alt=""></div>
+					<div class="zqq_txt zqq_txt_border" >
+						<p class="zqq_txt_content1">成渝高铁</p>
+
+						<p class="zqq_txt_content2">
+						<span class="zqq_right">
+							88% 
+							<i class="zqq_heart"></i>
+						</span>
+							爱上天府之国
+						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div id="zqq_base6">
+		<div class="zqq_base4">
+			<div class="zqq_title">
+				<div class="zqq_subnav1">
+					<a href="###" class="zqq_subnav_bg">上海</a>
+					<a href="###">北京</a>
+					<a href="###">杭州</a>
+					<a href="###">广州</a>
+					<a href="###">南京</a>
+					<a href="###">天津</a>
+					<a href="###">武汉</a>
+					<a href="###">西安</a>
+				</div>
+				<h2>
+					优惠酒店
+					<span>/热门酒店优惠</span>
+				</h2>
+			</div>
+		</div>
+		<div id="zqq_list">
+			<table width=100% >
+				<tbody>
+				<tr>
+					<td width=24%>
+						<p ng-repeat="shh in datasetHotline" ng-if="$index<4">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+					<td width=14%>
+						<i class="zqq_table_shuline"></i>
+					</td>
+					<td width=24%>
+						<p  ng-repeat="shh in datasetHotline" ng-if="$index<8&&$index>=4">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+					<td width=14%>
+						<i class="zqq_table_shuline"></i>
+					</td>
+					<td width=24%>
+						<p  ng-repeat="shh in datasetHotline" ng-if="$index<12&&$index>=8">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="zqq_list_beijing">
+			<table width=100% >
+				<tbody>
+				<tr>
+					<td width=24%>
+						<p  ng-repeat="bj in datasetHotline2" ng-if="$index<4">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{bj.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{bj.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{bj.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+					<td width=14%>
+						<i class="zqq_table_shuline"></i>
+					</td>
+					<td width=24%>
+						<p  ng-repeat="bj in datasetHotline2" ng-if="$index<8&&$index>=4">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{bj.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{bj.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{bj.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+					<td width=14%>
+						<i class="zqq_table_shuline"></i>
+					</td>
+					<td width=24%>
+						<p  ng-repeat="bj in datasetHotline2" ng-if="$index<12&&$index>=8">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{bj.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{bj.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{bj.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="zqq_list_hangzhou">
+			<table width=100% >
+				<tbody>
+				<tr>
+					<td width=24%>
+						<p ng-repeat="hz in datasetHotline3" ng-if="$index<4">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{hz.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{hz.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{hz.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+					<td width=14%>
+						<i class="zqq_table_shuline"></i>
+					</td>
+					<td width=24%>
+						<p  ng-repeat="shh in datasetHotline3" ng-if="$index<8&&$index>=4">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+					<td width=14%>
+						<i class="zqq_table_shuline"></i>
+					</td>
+					<td width=24%>
+						<p  ng-repeat="shh in datasetHotline3" ng-if="$index<12&&$index>=8">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="zqq_list_guangzhou">
+			<table width=100% >
+				<tbody>
+				<tr>
+					<td width=24%>
+						<p ng-repeat="shh in datasetHotline4" ng-if="$index<4">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+					<td width=14%>
+						<i class="zqq_table_shuline"></i>
+					</td>
+					<td width=24%>
+						<p  ng-repeat="shh in datasetHotline4" ng-if="$index<8&&$index>=4">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+					<td width=14%>
+						<i class="zqq_table_shuline"></i>
+					</td>
+					<td width=24%>
+						<p  ng-repeat="shh in datasetHotline4" ng-if="$index<12&&$index>=8">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="zqq_list_nanjing">
+			<table width=100% >
+				<tbody>
+				<tr>
+					<td width=24%>
+						<p ng-repeat="shh in datasetHotline5" ng-if="$index<4">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+					<td width=14%>
+						<i class="zqq_table_shuline"></i>
+					</td>
+					<td width=24%>
+						<p  ng-repeat="shh in datasetHotline5" ng-if="$index<8&&$index>=4">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+					<td width=14%>
+						<i class="zqq_table_shuline"></i>
+					</td>
+					<td width=24%>
+						<p  ng-repeat="shh in datasetHotline5" ng-if="$index<12&&$index>=8">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="zqq_list_tianjin">
+			<table width=100% >
+				<tbody>
+				<tr>
+					<td width=24%>
+						<p ng-repeat="shh in datasetHotline6" ng-if="$index<4">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+					<td width=14%>
+						<i class="zqq_table_shuline"></i>
+					</td>
+					<td width=24%>
+						<p  ng-repeat="shh in datasetHotline6" ng-if="$index<8&&$index>=4">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+					<td width=14%>
+						<i class="zqq_table_shuline"></i>
+					</td>
+					<td width=24%>
+						<p  ng-repeat="shh in datasetHotline6" ng-if="$index<12&&$index>=8">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="zqq_list_wuhan">
+			<table width=100% >
+				<tbody>
+				<tr>
+					<td width=24%>
+						<p ng-repeat="shh in datasetHotline7" ng-if="$index<4">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+					<td width=14%>
+						<i class="zqq_table_shuline"></i>
+					</td>
+					<td width=24%>
+						<p  ng-repeat="shh in datasetHotline7" ng-if="$index<8&&$index>=4">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+					<td width=14%>
+						<i class="zqq_table_shuline"></i>
+					</td>
+					<td width=24%>
+						<p  ng-repeat="shh in datasetHotline7" ng-if="$index<12&&$index>=8">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<div id="zqq_list_xian">
+			<table width=100% >
+				<tbody>
+				<tr>
+					<td width=24%>
+						<p ng-repeat="shh in datasetHotline8" ng-if="$index<4">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+					<td width=14%>
+						<i class="zqq_table_shuline"></i>
+					</td>
+					<td width=24%>
+						<p  ng-repeat="shh in datasetHotline8" ng-if="$index<8&&$index>=4">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+					<td width=14%>
+						<i class="zqq_table_shuline"></i>
+					</td>
+					<td width=24%>
+						<p  ng-repeat="shh in datasetHotline8" ng-if="$index<12&&$index>=8">
+								<span class="zqq_price">
+									<dfn>¥</dfn>
+									<strong class="routeprice">{{shh.price}}</strong>起
+								</span>
+							<a href="">
+								<span class="routeleft">{{shh.routeleft}}</span>
+								<i class="zqq_jian"></i>
+								<span class="routeright" >{{shh.routeright}}</span>
+							</a>
+						</p>
+
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div id="zqq_maincolumn">
+		<div class="zqq_column">
+			<i class="zqq_column_img1"></i>
+			<h4>安心服务</h4>
+			<p>7X24小时可预订</p>
+			<p>自取、送票上门任你选</p>
+		</div>
+		<div class="zqq_column" id="zqq_middle">
+			<i class="zqq_column_img2"></i>
+			<h4>安心服务</h4>
+			<p>7X24小时可预订</p>
+			<p>自取、送票上门任你选</p>
+		</div>
+		<div class="zqq_column" class="zqq_right">
+			<i class="zqq_column_img3"></i>
+			<h4>安心服务</h4>
+			<p>7X24小时可预订</p>
+			<p>自取、送票上门任你选</p>
+		</div>
+	</div>
+	<div id="zqq_msg">
+		<div class="zqq_msg_title">
+			<h3>
+				<a href="">携程火车票官网</a>
+			</h3>
+			为您提供
+			<a href="">12306火车票网上订票</a>
+			服务，您也可进行
+			<a href="">火车时刻表</a>
+			查询
+		</div>
+		<dl>
+			<dt>
+				<strong>热门导航</strong>
+			</dt>
+			<dd>
+				<a href="">火车票价查询</a>
+				<a href="">余票查询</a>
+				<a href="">
+					代售点查询</a>
+				<a href="">预售期查询</a>
+				<a href="">火车线路</a>
+				<a href="">车次查询</a>
+				<a href="">
+					火车站查询</a>
+				<a href="">火车票网站地图</a>
+				<a href="">城市火车时刻表</a>
+				<a href="">火车线路时刻表</a>
+				<a href="">携程旅游攻略</a>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<strong>城市火车票</strong>
+			</dt>
+			<dd>
+				<a href="">上海火车票</a>
+				<a href="">广州火车票</a>
+				<a href="">深圳火车票</a>
+				<a href="">北京火车票</a>
+				<a href="">杭州火车票</a>
+				<a href="">成都火车票</a>
+				<a href="">南京火车票</a>
+				<a href="">郑州火车票</a>
+				<a href="">厦门火车票</a>
+				<a href="">重庆火车票</a>
+				<a href="">苏州火车票</a>
+				<a href="">大连火车票</a>
+				<a href="">西安火车票</a>
+				<a href="">福州火车票</a>
+				<a href="">济南火车票</a>
+				<a href="">青岛火车票</a>
+				<a href="">合肥火车票</a>
+				<a href="">武汉火车票</a>
+				<a href="">宁波火车票</a>
+				<a href="">哈尔滨火车票</a>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<strong>热门线路时刻表</strong>
+			</dt>
+			<dd>
+				<a href="">哈尔滨到北京</a>
+				<a href="">北京到哈尔滨</a>
+				<a href="">大连到沈阳</a>
+				<a href="">长春到北京</a>
+				<a href="">沈阳到北京</a>
+				<a href="">
+					北京到石家庄</a>
+				<a href="">
+					郑州到北京</a>
+				<a href="">
+					北京到大连</a>
+				<a href="">
+					大连到北京</a>
+				<a href="">
+					北京到长春</a>
+				<a href="">
+					牡丹江到哈尔滨</a>
+				<a href="">
+					北京到沈阳</a>
+				<a href="">
+					哈尔滨到牡丹江</a>
+				<a href="">
+					佳木斯到哈尔滨</a>
+				<a href="">
+					上海到北京</a>
+				<a href="">
+					北京到成都</a>
+				<a href="">
+					北京到郑州</a>
+				<a href="">
+					沈阳到哈尔滨</a>
+				<a href="">
+					芜湖到合肥</a>
+				<a href="">
+					哈尔滨到大连</a>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<strong>热门时刻表</strong>
+			</dt>
+			<dd>
+				<a href="">上海时刻表</a>
+				<a href="">广州时刻表</a>
+				<a href="">深圳时刻表</a>
+				<a href="">北京时刻表</a>
+				<a href="">杭州时刻表</a>
+				<a href="">成都时刻表</a>
+				<a href="">南京时刻表</a>
+				<a href="">郑州时刻表</a>
+				<a href="">厦门时刻表</a>
+				<a href="">重庆时刻表</a>
+				<a href="">苏州时刻表</a>
+				<a href="">大连时刻表</a>
+				<a href="">西安时刻表</a>
+				<a href="">福州时刻表</a>
+				<a href="">济南时刻表</a>
+				<a href="">青岛时刻表</a>
+				<a href="">合肥时刻表</a>
+				<a href="">武汉时刻表</a>
+				<a href="">宁波时刻表</a>
+				<a href="">哈尔滨时刻表</a>
+				<a href="">北京南时刻表</a>
+				<a href="">北京西时刻表</a>
+				<a href="">上海南时刻表</a>
+				<a href="">广州南时刻表</a>
+				<a href="">广州东时刻表</a>
+				<a href="">杭州南时刻表</a>
+				<a href="">沈阳北时刻表</a>
+				<a href="">北京北时刻表</a>
+				<a href="">深圳西时刻表</a>
+				<a href="">天津时刻表</a>
+				<a href="">重庆北时刻表</a>
+				<a href="">西安北时刻表</a>
+				<a href="">广州北时刻表</a>
+				<a href="">长沙南时刻表</a>
+				<a href="">厦门北时刻表</a>
+				<a href="">沈阳时刻表</a>
+			</dd>
+		</dl>
+		<dl class="zqq_width110">
+			<dt>
+				<strong>热门火车线路</strong>
+			</dt>
+			<dd>
+				<a href="">
+					上海到西安火车</a>
+				<a href="">
+					广州到成都火车</a>
+				<a href="">
+					北京到西安火车</a>
+				<a href="">
+					拉萨到成都火车</a>
+				<a href="">
+					西安到北京火车</a>
+				<a href="">
+					广州到上海火车</a>
+				<a href="">
+					成都到深圳火车</a>
+				<a href="">
+					西安到上海火车</a>
+				<a href="">
+					乌鲁木齐到西安火车</a>
+				<a href="">
+					温州到贵阳火车</a>
+				<a href="">
+					成都到北京火车</a>
+				<a href="">
+					西安到乌鲁木齐火车</a>
+				<a href="">
+					上海到广州火车</a>
+				<a href="">
+					成都到上海火车</a>
+				<a href="">
+					昆明到北京火车</a>
+				<a href="">
+					大连到哈尔滨火车</a>
+				<a href="">
+					北京到哈尔滨火车</a>
+				<a href="">
+					贵阳到北京火车</a>
+				<a href="">
+					杭州到贵阳火车</a>
+				<a href="">
+					成都到西昌火车</a>
+			</dd>
+		</dl>
+		<dl class="zqq_width110">
+			<dt>
+				<strong>火车票代售点</strong>
+			</dt>
+			<dd>
+				<a href="">
+					温州火车票代售点</a>
+				<a href="">
+					海口火车票代售点</a>
+				<a href="">
+					石家庄火车票代售点</a>
+				<a href="">
+					新乡火车票代售点</a>
+				<a href="">
+					福州火车票代售点</a>
+				<a href="">
+					义乌火车票代售点</a>
+				<a href="">
+					苏州火车票代售点</a>
+				<a href="">
+					贵阳火车票代售点</a>
+				<a href="">
+					厦门火车票代售点</a>
+				<a href="">
+					盐城火车票代售点</a>
+				<a href="">
+					青岛火车票代售点</a>
+				<a href="">
+					广州火车票代售点</a>
+				<a href="">
+					扬州火车票代售点</a>
+				<a href="">
+					淄博火车票代售点</a>
+				<a href="">
+					淮安火车票代售点</a>
+				<a href="">
+					顺义火车票代售点</a>
+				<a href="">
+					宁波火车票代售点</a>
+				<a href="">
+					柳州火车票代售点</a>
+				<a href="">
+					蚌埠火车票代售点</a>
+				<a href="">
+					金华火车票代售点</a>
+			</dd>
+		</dl>
+		<dl id="zqq_width150">
+			<dt>
+				<strong>热门火车时刻表</strong>
+			</dt>
+			<dd>
+				<a href="">
+					上海到西安火车时刻表</a>
+				<a href="">
+					广州到成都火车时刻表</a>
+				<a href="">
+					北京到西安火车时刻表</a>
+				<a href="">
+					拉萨到成都火车时刻表</a>
+				<a href="">
+					西安到北京火车时刻表</a>
+				<a href="">
+					广州到上海火车时刻表</a>
+				<a href="">
+					成都到深圳火车时刻表</a>
+				<a href="">
+					西安到上海火车时刻表</a>
+				<a href="">
+					乌鲁木齐到西安火车时刻表</a>
+				<a href="">
+					温州到贵阳火车时刻表</a>
+				<a href="">
+					成都到北京火车时刻表</a>
+				<a href="">
+					西安到乌鲁木齐火车时刻表</a>
+				<a href="">
+					上海到广州火车时刻表</a>
+				<a href="">
+					成都到上海火车时刻表</a>
+				<a href="">
+					昆明到北京火车时刻表</a>
+				<a href="">
+					大连到哈尔滨火车时刻表</a>
+				<a href="">
+					北京到哈尔滨火车时刻表</a>
+				<a href="">
+					贵阳到北京火车时刻表</a>
+				<a href="">
+					杭州到贵阳火车时刻表</a>
+				<a href="">
+					成都到西昌火车时刻表</a>
+			</dd>
+		</dl>
+	</div>
+</div>
+<script>
+    $('.ck-slide').ckSlide({
+        autoPlay:true
+        /*dir:"x"*/
+    });
+</script>
+
+</body>
+
+</html>

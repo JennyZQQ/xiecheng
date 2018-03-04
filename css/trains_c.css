@@ -1,0 +1,147 @@
+#zqq_basic1{
+    margin: 0 auto;
+	width: 1000px;
+	height: 2352px;
+}
+#zqq_pic{
+	position: relative;
+	margin-bottom: 20px;
+	width: 1000px;
+	height: 280px;
+}
+#zqq_pic img{
+	width: 1000px;
+	height: 280px;
+}
+.zqq_ul_list{
+	position: absolute;
+    left: 10px;
+    bottom: 7px;
+}
+.zqq_ul_list li{
+	float: left;
+}
+.zqq_ul_list span{
+    padding: 0 5px;
+    color: #06C;
+}
+.zqq_ul_list a{
+	display: inline-block;
+    width: 39px;
+    height: 21px;
+    background: url(../img/zqq_ul_tip.png) no-repeat;
+    font-size:12px;
+    text-align: center;
+    line-height: 21px;
+}
+.zqq_ul_list a:hover{
+    text-decoration: none;
+    background: url(../img/zqq_ul_tip.png) no-repeat;
+    background-position: 0 -33px;
+    color:#fff;
+}
+.zqq_basic2{
+	width: 974px;
+	height: 392px;
+	position: relative;
+    margin-left: 26px;
+    padding: 0 0 30px 42px;
+    border-left: 12px solid #EEEEEE;
+}
+.zqq_basic4{
+	width: 974px;
+	height: 392px;
+	position: relative;
+    margin-left: 26px;
+    padding: 0 0 30px 42px;
+    border-left: 12px solid #fff;
+}
+.zqq_circle{
+	display: block;
+    width: 56px;
+    height: 56px;
+    background: url(../img/zqq_circle.png);
+    position: absolute;
+    top: 0;
+    left: -33px;
+}
+.zqq_circlet{ 
+	position: absolute;
+    top: 0;
+    left: -33px;
+	display: block;
+    width: 56px;
+    height: 56px;
+    background: url(../img/zqq_circle.png);
+    background-position: 0 -128px;
+   
+}
+.zqq_guide{
+	clear: both;
+	width: 920px;
+	height: 56px;
+    margin-bottom: 16px;
+    padding: 12px 24px 12px 8px;
+    background-color: #EEEEEE;
+}
+.zqq_guide h2{
+	float: left;
+	margin-top: 0;
+    font: 28px "Microsoft YaHei", SimSun, Tahoma, Verdana, Arial, sans-serif;
+    line-height: 28px;
+}
+.zqq_btn{
+	float: right;
+	height: 30px;
+}
+.zqq_btn label{
+	margin-right: 20px;
+}
+.zqq_btn span{
+	font: 14px "Microsoft YaHei", SimSun, Tahoma, Verdana, Arial, sans-serif;
+	vertical-align: middle;
+}
+.zqq_input{
+	width: 160px;
+    padding: 4px;
+    border-color: #BBB #DDD #DDD #BBB;
+    border-style: solid;
+    border-width: 1px;
+    font: 14px "Microsoft YaHei", SimSun, Tahoma, Verdana, Arial, sans-serif;
+    outline: none;
+    box-shadow: 1px 1px 1px #DDD inset;
+}
+.zqq_button{
+    margin-left: -12px;
+    padding: 0 14px;
+    text-shadow: 1px 1px 0 #CF7000;
+    background-color: #FFB000;
+    border: solid 1px #E77C00;
+    color: #FFF;
+    font-size: 14px;
+    font-family: SimSun, Tahoma, Verdana, Arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 1px 0 rgba(95,50,0,0.7);
+    border-radius: 3px;
+}
+.zqq_basic3{
+	clear: both;
+	width: 920px;
+	height: 290px;
+}
+.zqq_image{
+	float: left;
+	width: 660px;
+	height: 290px;
+}
+.zqq_container{
+	float: left;
+	width: 244px;
+	height: 290px;
+}
+.zqq_container p{
+	font-size: 12px;
+	line-height: 2em;
+}
